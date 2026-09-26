@@ -862,9 +862,9 @@ class Scene extends Layers implements h3d.IDrawable implements hxd.SceneEvents.I
 				cam.enter(ctx);
 				while ( l-- > 0 ) {
 					var top = l == 0 ? 0 : layersIndexes[l - 1];
-					if ( cam.layerVisible(l) ) {
-						while ( i >= top ) {
-							children[i--].drawRec(ctx);
+					if ( cam.layerVisible(l) ) {						
+						while ( i > top ) {
+							children[--i].drawRec(ctx);
 						}
 					} else {
 						i = top - 1;
